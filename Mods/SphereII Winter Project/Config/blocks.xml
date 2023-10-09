@@ -261,12 +261,12 @@
 			<property name="CanPlayersSpawnOn" value="false"/>
 			<property name="ParticleOnDeath" value="treeGib_small_dust"/>
 		</block>
-		<block name="treePlant02">
+		<!-- <block name="treePlant02">
 			<property name="Extends" value="poinsettia"/>
 			<drop event="Destroy" count="0"/>
 			<drop event="Destroy" name="resourceClayLump" count="1,2" prob="1"/>
 			<drop event="Harvest" name="resourceClayLump" count="5" tool_category="harvestingTools"/>
-		</block>
+		</block> -->
 		<!-- Snow Fog Particles-->
 		<block name="snowFog">
 			<property name="Material" value="Mair"/>

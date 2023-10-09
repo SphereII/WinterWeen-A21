@@ -9,7 +9,7 @@
 	</effect_group>
  </append>
  
-	<append xpath="/entity_classes/entity_class[starts-with(@name, 'zombieArlene') or
+<!--	<append xpath="/entity_classes/entity_class[starts-with(@name, 'zombieArlene') or
                                                 starts-with(@name, 'zombieMarlene') or
                                                 starts-with(@name, 'zombieDarlene') or
 												starts-with(@name, 'zombieJoe') or
@@ -23,10 +23,10 @@
 												starts-with(@name, 'zombieBiker') or
                                                	starts-with(@name, 'zombieDemolition')]">
       <effect_group name="No snow please on these vanilla zeds" >
-          <!--<triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Animator" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/> -->
+         <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Animator" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/> 
 
       </effect_group>
-	</append>
+	</append> -->
 
 
           <!--

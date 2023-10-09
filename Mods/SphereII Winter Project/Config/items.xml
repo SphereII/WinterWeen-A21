@@ -73,8 +73,8 @@
     <item  name="Cookies">
       <property name="HoldType" value="31"/>
       <property name="DisplayType" value="food"/>
-      <property name="Meshfile" value="Items/Misc/parcelPrefab"/>
-      <property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+	<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
       <property name="Material" value="Morganic"/>
       <property name="CustomIcon" value="Cookies" />
       <property name="Stacknumber" value="50"/>
