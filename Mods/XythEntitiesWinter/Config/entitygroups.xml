@@ -65,7 +65,6 @@
 		
 	</append>
 	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']">
-		<entity name="animalGuppyInsect" prob="5"/>
 		<entity name="animalBanditWolf" prob="10" />
 		<entity name="animalSnowSwarm_X" prob="20"/>
 		<entity name="animalSnowTornado_X" prob="30"/>
@@ -73,8 +72,6 @@
 		
 	</append>
 	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']">
-		<entity name="animalGuppyInsect" prob="10"/>
-		<entity name="animalBloodFlySwarm_X" prob="10"/>
 		<entity name="animalBanditWolf" prob="10" />
 		<entity name="animalSnowSwarm_X" prob="20"/>
 		<entity name="animalSnowTornado_X" prob="30"/>
@@ -121,8 +118,6 @@
     <entitygroup name="FlyingNightmares">
       <entity name="fantasyNightmare03Flying" />
       <entity name="animalSnowTornado_X" />
-      <entity name="animalBloatfly" />
-      <entity name="animalGuppyInsect" />
 	  <entity name="animalBloodFlySwarm_X"/>
     </entitygroup>
   </append>
@@ -131,14 +126,7 @@
     <entity name="fantasyNightmare03Flying" prob="0.10"/>
   </append>
   
-  
-  
-  
-  
-  
-  
-  
-  
+   
    <append xpath="/entitygroups" >
     <entitygroup name="sleeperSphereII_Nightmares_Stage1">
       <entity name="fantasyNightmare01" />
@@ -161,8 +149,6 @@
     <entitygroup name="FlyingNightmares">
       <entity name="fantasyNightmare03Flying" />
       <entity name="animalSnowTornado_X" />
-      <entity name="animalBloatfly" />
-      <entity name="animalGuppyInsect" />
 	  <entity name="animalBloodFlySwarm_X"/>
     </entitygroup>
   </append>
@@ -170,10 +156,6 @@
   <append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
     <entity name="fantasyNightmare03Flying" prob="0.10"/>
   </append>
-  
-  
-  
-  
   
   
   	<append xpath="/entitygroups/entitygroup[@name='AnimalsSmall']">	
@@ -218,7 +200,6 @@
 		
 	</append>
 	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']">
-		<entity name="animalGuppyInsect" prob="5"/>
 		<entity name="animalBanditWolf" prob="10" />
 		<entity name="animalSnowSwarm_X" prob="20"/>
 		<entity name="animalSnowTornado_X" prob="30"/>
@@ -226,7 +207,6 @@
 		
 	</append>
 	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']">
-		<entity name="animalGuppyInsect" prob="10"/>
 		<entity name="animalBloodFlySwarm_X" prob="10"/>
 		<entity name="animalBanditWolf" prob="10" />
 		<entity name="animalSnowSwarm_X" prob="20"/>
@@ -250,19 +230,5 @@
     </entitygroup>
   </append>
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-   
-	
+  	
 </configs>

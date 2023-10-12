@@ -906,7 +906,7 @@
 			<property name="PhysicsBody" value="vulture" />
 			<property name="SurfaceCategory" value="earth"/>
 			<property name="Mass" value="10"/>
-			<property name="Mesh" value="#@modfolder:Resources/XythAnimals.unity3d?SnowSwarm2_X" /> 
+			<property name="Mesh" value="#@modfolder:Resources/Swarms.unity3d?SnowSwarm2_X" /> 
 			<property name="HandItem" value="meleeHandSnowstorm" />
 			<property name="SoundRandom" value="" />
 			<property name="SoundRandomTime" value="60.0"/>
@@ -931,7 +931,7 @@
 		<entity_class name="animalBloodFlySwarm_X" extends="animalTemplateHostileFlying">
 		<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,cp,animal,hostile"/>
-			<property name="Mesh" value="#@modfolder:Resources/XythAnimals.unity3d?Swarm_X" /> 
+			<property name="Mesh" value="#@modfolder:Resources/Swarms.unity3d?Swarm_X" /> 
 			<property name="HandItem" value="meleeHandBloodFly" />
 			<property name="Class" value="EntityVulture" />
 			<property name="AvatarController" value="AvatarAnimalController"/>
@@ -970,7 +970,7 @@
 			<property name="PhysicsBody" value="vulture" />
 			<property name="SurfaceCategory" value="earth"/>
 			<property name="Mass" value="10"/>
-			<property name="Mesh" value="#@modfolder:Resources/XythAnimals.unity3d?SnowTornado_X" /> 
+			<property name="Mesh" value="#@modfolder:Resources/Swarms.unity3d?SnowTornado_X" /> 
 			<property name="HandItem" value="meleeHandSnowstorm" />
 			<property name="SoundRandom" value="" />
 			<property name="SoundRandomTime" value="60.0"/>
@@ -1146,13 +1146,12 @@
 	
 		
 <!--  Hostile Flyers  -->		
-		<entity_class name="animalBloatfly" extends="animalTemplateHostileFlying"> 
+		<!-- <entity_class name="animalBloatfly" extends="animalTemplateHostileFlying"> 
 			<property name="Tags" value="entity,animal,hostile,animalBloatfly"/>
 			<property name="UserSpawnType" value="Menu"/>
 			<property name="Faction" value="animals"/>					
 			<property name="Mass" value="100"/>
 			<property name="Mesh" value="#@modfolder:Resources/XythAnimals.unity3d?Bloatfly_X"/>
-<!--			<property name="Mesh" value="#@modfolder:Resources/XythAnimals.unity3d?creatureGuppyFlyingInsect"/> -->
 			<property name="MoveSpeed" value="1"/>
 			<property name="MoveSpeedAggro" value="2.1, 2.1"/>
 			<property name="MaxViewAngle" value="360"/>
@@ -1172,7 +1171,7 @@
 				<passive_effect name="HealthMax" operation="base_set" value="500"/>
 			</effect_group>
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="5"/> <!-- animalZombieDog -->
+			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="5"/> 
 			<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="3"/>
 			<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
 			<drop event="Harvest" name="resourceTestosteroneExtract" tag="butcherHarvest" count="1"/>
@@ -1180,7 +1179,8 @@
 			<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
 			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="0"/>
 			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="0"/>
-		</entity_class>			
+		</entity_class>	
+		
 		<entity_class name="animalGuppyInsect" extends="animalTemplateHostileFlying"> 
 		<property name="UserSpawnType" value="Menu"/>
 			<property name="Tags" value="entity,animal,hostile,animalGuppyInsect"/>
@@ -1208,7 +1208,7 @@
 			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
             <drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="2"/> 
             <drop event="Harvest" name="foodHoney" tag="butcherHarvest" count="2"/>
-		</entity_class>	
+		</entity_class>	-->
 		
 		
 <!--  DarkStarDragons Animals   -->
