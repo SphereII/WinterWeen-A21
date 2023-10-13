@@ -1,0 +1,15 @@
+<configs>
+	<append xpath="/npc" >
+			<npc_info
+				id="DialogTesting"
+				name="NPC"
+				name_key="npc_traitorJoel"
+				faction="whiteriver"
+				portrait="npc_joel"
+				greeting_type="nearby"
+				stance="Like" voice_set=""
+				trader_id="1" dialog_id="SphereIIDialogTest" />
+		 
+	</append>
+
+</configs>

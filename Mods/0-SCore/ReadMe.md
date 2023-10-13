@@ -23,7 +23,39 @@ Direct Download to the 0-SCore.zip available on gitlab mirror:
 ### Change Logs
 
 [ Change Log ]
-Version: 
+Version: 21.1.73.1834
+
+	[ Dialog ]
+		- Created new Harmony Patch to connect Statements and Action  nodes.
+		- Statements naturally ( through vanilla code ) have access to run action nodes like Response Nodes do.
+		- However, when creating a jump from one statement to another statement, in which there was no response,
+			the game would generate a [ Next ] response to take you to the next statement.
+			This [ Next ] did not have a copy of the full statement, nor its attached actions.
+
+		Example:
+      		<statement id="start_01" text="SphereIIDialogTest_start_01" ref_text="" nextstatementid="860354f59236e19469093dfcc989b693">
+        		<action type="PlaySoundSDX, SCore" id="SphereIIDialogTest_860354f59236e19469093dfcc989b693" />
+      		</statement>
+
+	[ MinEvent ]
+		Added new MinEventActionConverItem ( Completely Untested. Should be okay. Probably. )
+			The intended usage for this is to allow a limited use item that is not connected to the durability,
+			and allows it to change into another item.
+			I didn't even test this one.
+			This MinEvent will add a "MaxUsage" meta data entry using MaxUsage as a starting value.
+			Each time the event is fired on the item, it will count the usage down.
+			Not even joking.
+			When the item is down to 0, it will turn the item into the specified downgradeItem.
+
+		Example:
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ConvertItem, SCore" downgradeItem="meleeClub" maxUsage="10" />
+
+	[ UAI ]
+		- Fixed an issue where the UAI considerations were a bit off. Thanks khzmusik
+
+	[ Tools ]
+		- Added Unity Debugging DLLs for Alpha 21.x. Thanks to Yakov.
+
 	[ Snow Fill ]
 		- Added an additional check to see if the block was under water.
 
