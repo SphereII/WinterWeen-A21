@@ -155,6 +155,8 @@ internal class BlockSpawnCubeSDX : BlockPlayerSign
                 return;
             }
 
+            var rotation = new Vector3(0f, (float)(90 * (_blockValue.rotation & 3)), 0f);
+
             // If the class is empty, check to see if we have a group to spawn from.
             if (string.IsNullOrEmpty(entityClass))
             {
@@ -167,11 +169,11 @@ internal class BlockSpawnCubeSDX : BlockPlayerSign
                 if (EntityID == 0) // Invalid group.
                     return;
 
-                myEntity = EntityFactory.CreateEntity(EntityID, _blockPos.ToVector3()) as EntityAlive;
+                myEntity = EntityFactory.CreateEntity(EntityID, _blockPos.ToVector3(), rotation) as EntityAlive;
             }
             else
             {
-                myEntity = EntityFactory.CreateEntity(EntityClass.FromString(entityClass), _blockPos.ToVector3()) as EntityAlive;
+                myEntity = EntityFactory.CreateEntity(EntityClass.FromString(entityClass), _blockPos.ToVector3(),rotation) as EntityAlive;
             }
 
             // Not a valid entity.

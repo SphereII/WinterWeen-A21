@@ -1,9 +1,0 @@
-C:\Builds\WinterProjectA21\Game\Mods\0-SCore\obj\Debug\0-SCore.csproj.AssemblyReference.cache
-C:\Builds\WinterProjectA21\Game\Mods\0-SCore\obj\Debug\0-SCore.csproj.CoreCompileInputs.cache
-C:\Builds\WinterProjectA21\Game\Mods\0-SCore\obj\Debug\0-SCore.csproj.CopyComplete
-C:\Builds\WinterProjectA21\Game\Mods\0-SCore\obj\Debug\SCore.dll
-C:\Builds\WinterProjectA21\Game\Mods\0-SCore\obj\Debug\SCore.pdb
-C:\Builds\WinterProjectA21\Game\Mods\0-SCore\SCore.dll
-C:\Builds\WinterProjectA21\Game\Mods\0-SCore\SCore.pdb
-C:\Builds\WinterProjectA21\Game\Mods\0-SCore\UnityEngine.ParticleSystemModule.dll
-C:\Builds\WinterProjectA21\Game\Mods\0-SCore\UnityEngine.ParticleSystemModule.pdb
