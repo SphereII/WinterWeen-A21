@@ -1,234 +1,138 @@
 <configs>
-  <append xpath="/entitygroups/entitygroup[ starts-with(@name, 'WildGameForest')]">
-	<entity name="SealCub" prob="5" />
-  </append>
 
-  <append xpath="/entitygroups/entitygroup[ starts-with(@name, 'EnemyAnimals')]" >
-	<entity name="DeadSnake" prob="15" />
-	<entity name="Polarbear" prob="10" /> 
-	<entity name="DeadHead" prob="15" />
-  </append>
-  
-  <append xpath="/entitygroups/entitygroup[@name='WildGameForest']">
-	<entity name="SealCub" prob="10" />
-  </append>
-  
-  <append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
-	<entity name="Abominable" prob="3" />
-  </append>  
+<!-- Zommbieish things  -->
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesNight']/text()" delim="\n" op="add" >
+		Abominable,3
+		fantasyNightmare03Flying,0.10
+	</csv>  
+	  
+	<csv xpath="/entitygroups/entitygroup[@name='ZombiesAll']/text()" delim="\n" op="add" >
+		Snowman,5
+		Snowcop,3
+	</csv> 
+	  
+	<append xpath="/entitygroups" >
+	
+    <entitygroup name="sleeperSphereII_Nightmares_Stage1">
+      fantasyNightmare01
+      fantasyNightmare02
+      fantasyNightmare03
+      fantasyNightmare04
+      fantasyNightmare05
+      fantasyNightmare06
+    </entitygroup>
 
-  <append xpath="/entitygroups/entitygroup[@name='ZombiesAll']"> 
-	<entity name="Snowman" prob="5" />
-	<entity name="Snowcop" prob="3" />
+    <entitygroup name="Nightmares">
+      fantasyNightmare01
+      fantasyNightmare02
+      fantasyNightmare03
+      fantasyNightmare04
+      fantasyNightmare05
+      fantasyNightmare06
+    </entitygroup>
+
+    <entitygroup name="FlyingNightmares">
+      fantasyNightmare03Flying
+      animalSnowTornado_X
+	  animalBloodFlySwarm_X
+    </entitygroup>
   </append>
   
-  
- 	<append xpath="/entitygroups/entitygroup[@name='AnimalsSmall']">	
-		<entity name="animalPug" prob=".5" />
-		<entity name="animalBeagle" prob=".5" />
-		<!-- <entity name="animalPenguin" /> -->
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='AnimalsFarm']">	
-		<entity name="animalGoat" />
-		<entity name="animalWolfhound" prob=".25" />
-		<entity name="animalPug" prob=".25" />
-		<entity name="animalBeagle" prob=".25" />
-		<!-- <entity name="animalPenguin" /> -->
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='WildGameForest']">		
-		<entity name="animalGoat" />
-		<!-- <entity name="animalPenguin" /> -->
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']">	
-		<entity name="animalWulf" prob="10" />
-		<entity name="animalWolfhound" prob="10" />
-		<entity name="animalSnowSwarm_X" prob="20"/>
-		<entity name="animalSnowTornado_X" prob="30"/>
-		<entity name="animalSnowShark_X" prob="10"/>
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']">	
-		<entity name="animalWulf" prob="10" />
-		<entity name="animalWolfhound" prob="10" />
-		<entity name="animalSnowSwarm_X" prob="20"/>
-		<entity name="animalSnowTornado_X" prob="30"/>
-		<entity name="animalSnowShark_X" prob="10"/>
-		
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']">	
-		<entity name="animalWulf" prob="3" />
-		<entity name="animalPug" prob="3" />
-		<entity name="animalBeagle" prob="3" />
-		<entity name="animalWolfhound" prob="3" />
-		<entity name="animalSnowSwarm_X" prob="20"/>
-		<entity name="animalSnowTornado_X" prob="30"/>
-		<entity name="animalSnowShark_X" prob="10"/>
-		
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']">
-		<entity name="animalBanditWolf" prob="10" />
-		<entity name="animalSnowSwarm_X" prob="20"/>
-		<entity name="animalSnowTornado_X" prob="30"/>
-		<entity name="animalSnowShark_X" prob="3"/>
-		
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']">
-		<entity name="animalBanditWolf" prob="10" />
-		<entity name="animalSnowSwarm_X" prob="20"/>
-		<entity name="animalSnowTornado_X" prob="30"/>
-		<entity name="animalSnowShark_X" prob="5"/>		
-	</append>	
-	<append xpath="/entitygroups/entitygroup[@name='WolfGroup']">	
-		<entity name="animalWulf" />
-		<entity name="animalBanditWolf" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='WolfPack']">	
-		<entity name="animalWulf" />
-		<entity name="animalBanditWolf" />
-	</append>	
+ 	  
+<!-- Animals   -->
+
+
+	  <csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'WildGameForest')]/text()" delim="\n" op="add" >
+		SealCub,5
+		animalGoat
+		animalPenguin
+	  </csv>
+	  <csv xpath="/entitygroups/entitygroup[ starts-with(@name, 'EnemyAnimals')]/text()" delim="\n" op="add" >
+		DeadSnake,15
+		Polarbear,10 
+		DeadHead,15
+	  </csv>
+		<csv xpath="/entitygroups/entitygroup[@name='AnimalsSmall']/text()" delim="\n" op="add" >  
+		animalPug,.5
+		animalBeagle,.5
+		animalPenguin
+	</csv>
+		<csv xpath="/entitygroups/entitygroup[@name='AnimalsFarm']/text()" delim="\n" op="add" >
+		animalGoat
+		animalWolfhound,.25
+		animalPug,.25
+		animalBeagle,.25
+		animalPenguin
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']/text()" delim="\n" op="add" >
+		animalWulf,10
+		animalWolfhound,10
+		animalSnowSwarm_X,20
+		animalSnowTornado_X,30
+		animalSnowShark_X,10
+	</csv>
+	<csv xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']/text()" delim="\n" op="add" >
+		animalWulf,10
+		animalWolfhound,10
+		animalSnowSwarm_X,20
+		animalSnowTornado_X,30
+		animalSnowShark_X,10
+	</csv>
+	
+	<csv xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']/text()" delim="\n" op="add" >
+		animalWulf,3
+		animalPug,3
+		animalBeagle,3
+		animalWolfhound,3
+		animalSnowSwarm_X,20
+		animalSnowTornado_X,30
+		animalSnowShark_X,10
+	</csv>
+	
+	<csv xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']/text()" delim="\n" op="add" >
+		animalBanditWolf,10
+		animalSnowSwarm_X,20
+		animalSnowTornado_X,30
+		animalSnowShark_X,3
+	</csv>
+	
+	<csv xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']/text()" delim="\n" op="add" >
+		animalBanditWolf,10
+		animalSnowSwarm_X,20
+		animalSnowTornado_X,30
+		animalSnowShark_X,5		
+	</csv>
+
+	<csv xpath="/entitygroups/entitygroup[@name='WolfGroup']/text()" delim="\n" op="add" >
+		animalWulf
+		animalBanditWolf
+	</csv>
+	
+	<csv xpath="/entitygroups/entitygroup[@name='WolfPack']/text()" delim="\n" op="add" >
+		animalWulf
+		animalBanditWolf
+	</csv>
+
+<!--  Cave dwellers  -->	
 
   <append xpath="/entitygroups">
     <entitygroup name="EnemyAnimalsCaves">
-      <entity name="animalSpider01" prob="10"/>
-      <entity name="animalSpider02" prob="10" />
-      <entity name="animalSpider03" prob="10"/>
-	   <entity name="zombieMannequinFemale" prob="8"/>
+      animalSpider01,10
+      animalSpider02,10
+      animalSpider03,10
+	   zombieMannequinFemale,8
     </entitygroup>
   </append> 
   
-  
-    <append xpath="/entitygroups" >
-    <entitygroup name="sleeperSphereII_Nightmares_Stage1">
-      <entity name="fantasyNightmare01" />
-      <entity name="fantasyNightmare02" />
-      <entity name="fantasyNightmare03" />
-      <entity name="fantasyNightmare04" />
-      <entity name="fantasyNightmare05" />
-      <entity name="fantasyNightmare06" />
-    </entitygroup>
-
-    <entitygroup name="Nightmares">
-      <entity name="fantasyNightmare01" />
-      <entity name="fantasyNightmare02" />
-      <entity name="fantasyNightmare03" />
-      <entity name="fantasyNightmare04" />
-      <entity name="fantasyNightmare05" />
-      <entity name="fantasyNightmare06" />
-    </entitygroup>
-
-    <entitygroup name="FlyingNightmares">
-      <entity name="fantasyNightmare03Flying" />
-      <entity name="animalSnowTornado_X" />
-	  <entity name="animalBloodFlySwarm_X"/>
-    </entitygroup>
-  </append>
-  
-  <append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
-    <entity name="fantasyNightmare03Flying" prob="0.10"/>
-  </append>
-  
-   
-   <append xpath="/entitygroups" >
-    <entitygroup name="sleeperSphereII_Nightmares_Stage1">
-      <entity name="fantasyNightmare01" />
-      <entity name="fantasyNightmare02" />
-      <entity name="fantasyNightmare03" />
-      <entity name="fantasyNightmare04" />
-      <entity name="fantasyNightmare05" />
-      <entity name="fantasyNightmare06" />
-    </entitygroup>
-
-    <entitygroup name="Nightmares">
-      <entity name="fantasyNightmare01" />
-      <entity name="fantasyNightmare02" />
-      <entity name="fantasyNightmare03" />
-      <entity name="fantasyNightmare04" />
-      <entity name="fantasyNightmare05" />
-      <entity name="fantasyNightmare06" />
-    </entitygroup>
-
-    <entitygroup name="FlyingNightmares">
-      <entity name="fantasyNightmare03Flying" />
-      <entity name="animalSnowTornado_X" />
-	  <entity name="animalBloodFlySwarm_X"/>
-    </entitygroup>
-  </append>
-  
-  <append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
-    <entity name="fantasyNightmare03Flying" prob="0.10"/>
-  </append>
-  
-  
-  	<append xpath="/entitygroups/entitygroup[@name='AnimalsSmall']">	
-		<entity name="animalPug" prob=".5" />
-		<entity name="animalBeagle" prob=".5" />
-		<!-- <entity name="animalPenguin" /> -->
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='AnimalsFarm']">	
-		<entity name="animalGoat" />
-		<entity name="animalWolfhound" prob=".25" />
-		<entity name="animalPug" prob=".25" />
-		<entity name="animalBeagle" prob=".25" />
-		<!-- <entity name="animalPenguin" /> -->
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='WildGameForest']">		
-		<entity name="animalGoat" />
-		<!-- <entity name="animalPenguin" /> -->
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']">	
-		<entity name="animalWulf" prob="10" />
-		<entity name="animalWolfhound" prob="10" />
-		<entity name="animalSnowSwarm_X" prob="20"/>
-		<entity name="animalSnowTornado_X" prob="30"/>
-		<entity name="animalSnowShark_X" prob="10"/>
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']">	
-		<entity name="animalWulf" prob="10" />
-		<entity name="animalWolfhound" prob="10" />
-		<entity name="animalSnowSwarm_X" prob="20"/>
-		<entity name="animalSnowTornado_X" prob="30"/>
-		<entity name="animalSnowShark_X" prob="10"/>
-		
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']">	
-		<entity name="animalWulf" prob="3" />
-		<entity name="animalPug" prob="3" />
-		<entity name="animalBeagle" prob="3" />
-		<entity name="animalWolfhound" prob="3" />
-		<entity name="animalSnowSwarm_X" prob="20"/>
-		<entity name="animalSnowTornado_X" prob="30"/>
-		<entity name="animalSnowShark_X" prob="10"/>
-		
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']">
-		<entity name="animalBanditWolf" prob="10" />
-		<entity name="animalSnowSwarm_X" prob="20"/>
-		<entity name="animalSnowTornado_X" prob="30"/>
-		<entity name="animalSnowShark_X" prob="3"/>
-		
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsWasteland']">
-		<entity name="animalBloodFlySwarm_X" prob="10"/>
-		<entity name="animalBanditWolf" prob="10" />
-		<entity name="animalSnowSwarm_X" prob="20"/>
-		<entity name="animalSnowTornado_X" prob="30"/>
-		<entity name="animalSnowShark_X" prob="5"/>		
-	</append>	
-	<append xpath="/entitygroups/entitygroup[@name='WolfGroup']">	
-		<entity name="animalWulf" />
-		<entity name="animalBanditWolf" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[@name='WolfPack']">	
-		<entity name="animalWulf" />
-		<entity name="animalBanditWolf" />
-	</append>	
-
   <append xpath="/entitygroups">
     <entitygroup name="EnemyAnimalsCaves">
-      <entity name="animalSpider01" prob="10"/>
-      <entity name="animalSpider02" prob="10" />
-      <entity name="animalSpider03" prob="10"/>
+      animalSpider01,10
+      animalSpider02,10
+      animalSpider03,10
     </entitygroup>
   </append>
+
+ 
   
   	
 </configs>
