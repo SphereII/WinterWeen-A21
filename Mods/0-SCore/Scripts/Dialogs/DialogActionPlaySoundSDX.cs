@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Audio;
+using UnityEngine;
 
 public class DialogActionPlaySoundSDX : BaseDialogAction
 {
@@ -11,7 +12,6 @@ public class DialogActionPlaySoundSDX : BaseDialogAction
         {
             player.StopOneShot(_lastSound);
         }
-
         player.PlayOneShot(ID, false);
         _lastSound = ID;
     }

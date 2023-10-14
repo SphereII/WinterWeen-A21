@@ -17,16 +17,24 @@ namespace Harmony.Dialog
         {
             public static void Postfix(DialogStatement __instance, ref List<BaseResponseEntry> __result)
             {
-                foreach (var responses in __result)
+                // If this isn't an generated Next, skip it.
+                if (__result.Count > 1) return;
+                if (__result.Count == 0) return;
+                
+                var response = __result[0].Response;
+                var statementID = response.NextStatementID;
+                
+                // Not a next statement? skip.
+                if (response.Text != "[" + Localization.Get("xuiNext") + "]") return;
+
+                // Find the actual statement and copy its actions over to the returned response.
+                foreach (var t in __instance.OwnerDialog.Statements)
                 {
-                    var statementID = responses.Response.NextStatementID;
-                    foreach (var t in __instance.OwnerDialog.Statements)
-                    {
-                        if (t.NextStatementID != statementID) continue;
-                        responses.Response.Actions = t.Actions;
-                        break;
-                    }
+                    if (t.NextStatementID != statementID) continue;
+                    __result[0].Response.Actions = t.Actions;
+                    break;
                 }
+            
             }
         } 
     }
