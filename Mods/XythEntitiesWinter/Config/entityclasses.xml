@@ -53,11 +53,11 @@
     </entity_class>
 	
     <entity_class name="Abominable" extends="zombieTemplateMale">
-      <!-- Snowman by junaidamin is licensed under CC Attribution -->
-	  <property name="UserSpawnType" value="Menu"/>
+      <property name="UserSpawnType" value="Menu"/>
  	  <property name="AvatarController" value="AvatarAnimalController"/> 
       <property name="RootMotion" value="false" />
       <property name="HasRagdoll" value="true" />
+	  <property name="Faction" value="undead"/>
       <property name="Mesh" value="#@modfolder:Resources/Abominable.unity3d?Abominable_X" />
       <property name="Tags" value="zombie,walker,feral"/>
       <property name="Class" value="EntityZombie"/> 
@@ -114,7 +114,7 @@
  	  <property name="AvatarController" value="AvatarAnimalController"/> 
 	  <property name="UserSpawnType" value="Menu"/>
 	  <property name="Faction" value="undead"/>
-      <property name="EntityActiveWhen" value="night" />
+      <property name="EntityActiveWhen" value="night" /> 
       <property name="RootMotion" value="false" />
       <property name="HasRagdoll" value="true" />
 	  <property name="LookAtAngle" value="0"/>
@@ -158,13 +158,12 @@
       </effect_group>
 		<effect_group name="No snow please" >
           <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Renderer" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
-       </effect_group>
-	  
-	  
+       </effect_group> 
       <property name="MoveSpeed" value="0.8"/>
       <property name="MoveSpeedAggro" value="0.8, 1.25"/>
       <property name="MoveSpeedPanic" value="0.9"/>
     </entity_class>
+	
     <entity_class name="Snowcop" extends="zombieTemplateMale">
 	<property name="UserSpawnType" value="Menu"/>
       <!-- Snowman by junaidamin is licensed under CC Attribution -->
