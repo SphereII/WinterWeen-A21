@@ -5,6 +5,7 @@ public class QuestActionGiveCVarBuffSDX : BaseQuestAction
 {
     public override void SetupAction()
     {
+        
     }
 
 
