@@ -294,8 +294,7 @@ namespace SCore.Features.RemoteCrafting.Scripts
                 if (lootTileEntity.blockValue.Block.Properties.Values.ContainsKey("DropBox")) continue;
 
                 // Can we quickly find a incomplete stack?
-                lootTileEntity.TryStackItem(0, itemStack);
-                if (itemStack.count == 0) return true;
+                if (lootTileEntity.TryStackItem(0, itemStack)) return true;
 
                 var matchingItem = false;
                 // Loop through the items and see if we have any matching items.

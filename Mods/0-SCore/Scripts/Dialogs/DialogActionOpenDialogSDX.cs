@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public class DialogActionOpenDialogSDX : BaseDialogAction
+﻿public class DialogActionOpenDialogSDX : DialogActionAddBuff
 {
     public override void PerformAction(EntityPlayer player)
     {
@@ -9,7 +7,7 @@ public class DialogActionOpenDialogSDX : BaseDialogAction
     }
 }
 
-public class DialogActionOpenWindowSDX : BaseDialogAction
+public class DialogActionOpenWindowSDX : DialogActionAddBuff
 {
     public override void PerformAction(EntityPlayer player)
     {

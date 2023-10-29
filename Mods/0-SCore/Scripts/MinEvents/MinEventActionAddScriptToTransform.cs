@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml;
-using System.Xml.Linq;
 using UnityEngine;
 
 
@@ -57,26 +56,24 @@ public class MinEventActionAddScriptToTransform : MinEventActionBuffModifierBase
         }
  
     }
-    public override bool ParseXmlAttribute(XAttribute attribute)
+    public override bool ParseXmlAttribute(XmlAttribute _attribute)
     {
-        var flag = base.ParseXmlAttribute(attribute);
+        var flag = base.ParseXmlAttribute(_attribute);
         if (flag) return true;
-        var name = attribute.Name.LocalName;
+        var name = _attribute.Name;
 
         switch (name)
         {
             case null:
                 return flag;
             case "transform":
-                _transform = attribute.Value;
+                _transform = _attribute.Value;
                 return true;
             case "script":
-                _script = attribute.Value;
+                _script = _attribute.Value;
                 return true;
             default:
                 return false;
         }
     }
-
-   
 }

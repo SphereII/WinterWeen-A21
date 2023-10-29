@@ -26,6 +26,8 @@ namespace Harmony.WorldGen
                 if (configurationType != "HeightMap")
                     return;
 
+
+         
                 //GameManager.Instance.World.ChunkCache.ChunkProvider.GetTerrainGenerator().GetTerrainHeightAt()
               //  GameManager.Instance.World.ChunkCache.ChunkProvider.GetOverviewMap();
                 var caveStamp = Configuration.GetPropertyValue(AdvFeatureClass, CavePath);

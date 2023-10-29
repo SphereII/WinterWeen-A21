@@ -16,6 +16,7 @@ namespace Harmony.Dialog
             var myEntity = __instance.xui.playerUI.entityPlayer.world.GetEntity(entityID) as global::EntityAliveSDX;
             if (myEntity == null) return true;
             myEntity.Buffs.RemoveCustomVar("CurrentPlayer");
+            myEntity.emodel.avatarController.UpdateBool("IsBusy", false);
             return true;
         }
     }
@@ -32,9 +33,9 @@ namespace Harmony.Dialog
             var myEntity = __instance.xui.playerUI.entityPlayer.world.GetEntity(entityID) as global::EntityAliveSDX;
             if (myEntity == null) return true;
             
+            myEntity.emodel.avatarController.UpdateBool("IsBusy", true);
             myEntity.RotateTo(__instance.xui.playerUI.entityPlayer, 8f, 8f);
             myEntity.SetLookPosition(__instance.xui.playerUI.entityPlayer.getHeadPosition());
-            myEntity.moveHelper.Stop();
             return true;
         }
     }

@@ -106,7 +106,6 @@
     <Compile Include="Harmony\Blocks\Particles.cs" />
     <Compile Include="Harmony\Dialog\DialogClose.cs" />
     <Compile Include="Harmony\Dialog\DialogFromXML.cs" />
-    <Compile Include="Harmony\Dialog\DialogStatement.cs" />
     <Compile Include="Harmony\DMS\DynamicMusicPlayerTracker.cs" />
     <Compile Include="Harmony\EAI\EAIManager.cs" />
     <Compile Include="Harmony\EAI\EAITarget.cs" />
@@ -302,6 +301,7 @@
     <Compile Include="Scripts\Entities\ModGeneralUtilities.cs" />
     <Compile Include="Scripts\Features\AdvLogging.cs" />
     <Compile Include="Scripts\Features\Configuration.cs" />
+    <Compile Include="Scripts\GameEvents\RequirementInVehicleSDX.cs" />
     <Compile Include="Scripts\ItemAction\ItemActionMeleeSDX.cs" />
     <Compile Include="Scripts\ItemAction\ItemActionLauncherSDX.cs" />
     <Compile Include="Scripts\ItemAction\ItemActionDeployNPCSDX.cs" />
@@ -312,7 +312,6 @@
     <Compile Include="Scripts\Managers\PortalManager.cs" />
     <Compile Include="Scripts\Managers\SCoreQuestEventManager.cs" />
     <Compile Include="Scripts\MinEvents\MinEventActionAddBuffByFactionSDX.cs" />
-    <Compile Include="Scripts\MinEvents\MinEventActionAddScriptToTransform.cs" />
     <Compile Include="Scripts\MinEvents\MinEventActionAnimatorFireTriggerSDX.cs" />
     <Compile Include="Scripts\MinEvents\MinEventActionAnimatorSetFloatSDX.cs" />
     <Compile Include="Scripts\MinEvents\MinEventActionAnimatorSetIntSDX.cs" />

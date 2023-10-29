@@ -54,7 +54,7 @@ namespace Harmony.UtilityAI
             public static bool Prefix(Context _context)
             {
                 if (_context.Self.IsSleeping) return false;
-              
+
                 return true;
             }
         }

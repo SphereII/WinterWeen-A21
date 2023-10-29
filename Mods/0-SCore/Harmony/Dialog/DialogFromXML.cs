@@ -1,8 +1,6 @@
-using System;
 using HarmonyLib;
 using System.Xml;
 using System.Xml.Linq;
-using UnityEngine;
 
 /**
  * SphereII_DialogFromXML_Extensions

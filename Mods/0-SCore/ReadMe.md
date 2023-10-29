@@ -23,19 +23,32 @@ Direct Download to the 0-SCore.zip available on gitlab mirror:
 ### Change Logs
 
 [ Change Log ]
+Version: 21.1.89.1227
+	[ Game Events ]
+		- Fixed typo in Vehicle.
+		- Added RequirementInVehicleSDX game events that takes a tag.
+			I don't even know if you can make this call from here. But the script is written.
+
+			<requirement class="InVehicleSDX , SCore">
+				<property name="invert" value="true" />
+				<property name="entity_tags" value="mytags" />
+			</requirement>
+
+Version:21.1.89.946
+	[ UAI ]
+		- Fixed an issue where NPCs could loot, but wouldn't keep any of the items it looted.
+		- Rolled back UAI change that caused the considerations to be calculated differently.
+
+	[ Game Events ]
+		- Added RequirementInVehicleSDX game events that takes a tag.
+			I don't even know if you can make this call from here. But the script is written.
+
+			<requirement class="InVehicleSDX , SCore">
+				<property name="invert" value="true" />
+				<property name="entity_tags" value="mytags" />
+			</requirement>
+
 Version: 21.1.73.1834
-
-	[ Dialog ]
-		- Created new Harmony Patch to connect Statements and Action  nodes.
-		- Statements naturally ( through vanilla code ) have access to run action nodes like Response Nodes do.
-		- However, when creating a jump from one statement to another statement, in which there was no response,
-			the game would generate a [ Next ] response to take you to the next statement.
-			This [ Next ] did not have a copy of the full statement, nor its attached actions.
-
-		Example:
-      		<statement id="start_01" text="SphereIIDialogTest_start_01" ref_text="" nextstatementid="860354f59236e19469093dfcc989b693">
-        		<action type="PlaySoundSDX, SCore" id="SphereIIDialogTest_860354f59236e19469093dfcc989b693" />
-      		</statement>
 
 	[ MinEvent ]
 		Added new MinEventActionConverItem ( Completely Untested. Should be okay. Probably. )
@@ -55,20 +68,6 @@ Version: 21.1.73.1834
 
 	[ Tools ]
 		- Added Unity Debugging DLLs for Alpha 21.x. Thanks to Yakov.
-
-	[ Snow Fill ]
-		- Added an additional check to see if the block was under water.
-
-	[ Snow ]
-		- Fixed an issue where the snow's bundles weren't being found correctly.
-
-	[ MinEvent ]
-		- Added new MinEventActionConvertItem
-			- This event is expected to run after a primary / secondary action, and allows you to have limit-use items
-			- After the item is used for the amount as defined in maxUsage, it'll convert into the specified item.
-			- If downgradeItem is not specified, it just removes the item.
-			<triggered_effect trigger = "onSelfBuffUpdate" action="ConvertItem, SCore" downgradeItem="meleeClub" maxUsage="10" />
-	
 
 Version: 21.1.56.1705
 

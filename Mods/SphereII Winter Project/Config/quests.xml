@@ -18,6 +18,7 @@
       <reward type="Item" id="armorClothPants" value="1" />
       <reward type="Item" id="gunBowT0PrimitiveBow" value="1" />
       <reward type="Item" id="resourceLockPick" value="5" />
+      <reward type="SkillPoints" value="2"  />
 
       
       <reward type="Item" id="ammoArrowIron" value="20"/>
@@ -44,7 +45,7 @@
       <objective type="Goto" id="trader" value="5" phase="1" />
     
       <reward type="Exp" value="1000" />
-      <reward type="SkillPoints" value="4"  />
+      <reward type="SkillPoints" value="2"  />
 
     </quest>
   </insertBefore>

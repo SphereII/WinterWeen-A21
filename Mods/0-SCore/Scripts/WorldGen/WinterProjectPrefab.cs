@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using InControl.NativeDeviceProfiles;
 using UnityEngine;
 using Random = System.Random;
 
@@ -139,16 +138,11 @@ public static class WinterProjectPrefab
                             continue;
 
                         var check = chunk.GetBlock(chunkX, snowY, chunkZ);
+
                         //if (log)
                         //    Write("Set " + worldX + "," + snowY + "," + worldZ + " to snow || world  " + chunk.GetWorldPos() + " applied: " + (check.type != snow.type) + "  rpc: " + Rpc);
 
                         if (check.type == snow.type) continue;
-                        if ( check.isWater) continue;
-                        
-                        // If the block is under water, skip it too
-                        var aboveCheck = chunk.GetBlock(chunkX, snowY + 1, chunkZ);
-                        if ( aboveCheck.isWater ) continue;
-                        
                         chunk.SetBlock(GameManager.Instance.World, chunkX, snowY, chunkZ, snow);
                         chunk.SetDensity(chunkX, snowY, chunkZ, MarchingCubes.DensityTerrain);
                     }

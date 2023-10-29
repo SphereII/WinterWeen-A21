@@ -107,23 +107,23 @@ public static class SphereCache
                 case "Legacy":
                     break;
                 case "Sebastian":
-                    Log.Out("Initializing Sebastian Cave System...");
-                    var counter = 0;
-                    var prefabs = GameManager.Instance.GetDynamicPrefabDecorator().allPrefabs;
-                    // garage_02,remnant_oldwest_06,cemetery_01,abandoned_house_01,house_burnt_06,vacant_lot_01,mp_waste_bldg_05_grey,oldwest_coal_factory,diner_03
-                    var prefabFilter = Configuration.GetPropertyValue(AdvFeatureClass, "PrefabSister").Split(',').ToList();
-                    foreach (var sister in prefabFilter)
-                    {
-                       foreach( var individualInstance in prefabs.FindAll(instance => instance.name.Contains(sister)))
-                       {
-                           var pos = individualInstance.boundingBoxPosition;
-                           var size = 200;
-                           counter++;
-                           Log.Out($"Generating Cave at {pos} of size {size}...");
-                           Sebastian.GenerateCave(pos, size, size);
-                       }
-                    }
-                    Log.Out($"Cave System Generation Complete: {counter} Caves Generated.");
+                    //Log.Out("Initializing Sebastian Cave System...");
+                    //var counter = 0;
+                    //var prefabs = GameManager.Instance.GetDynamicPrefabDecorator().allPrefabs;
+                    //// garage_02,remnant_oldwest_06,cemetery_01,abandoned_house_01,house_burnt_06,vacant_lot_01,mp_waste_bldg_05_grey,oldwest_coal_factory,diner_03
+                    //var prefabFilter = Configuration.GetPropertyValue(AdvFeatureClass, "PrefabSister").Split(',').ToList();
+                    //foreach (var sister in prefabFilter)
+                    //{
+                    //   foreach( var individualInstance in prefabs.FindAll(instance => instance.name.Contains(sister)))
+                    //   {
+                    //       var pos = individualInstance.boundingBoxPosition;
+                    //       var size = 200;
+                    //       counter++;
+                    //       Log.Out($"Generating Cave at {pos} of size {size}...");
+                    //       Sebastian.GenerateCave(pos, size, size);
+                    //   }
+                    //}
+                    //Log.Out($"Cave System Generation Complete: {counter} Caves Generated.");
                     //// Add an empty vector for the caveChunks so we don't re-generate.
                     caveChunks.Add(new Vector3i(0,0,0));
                     return;
