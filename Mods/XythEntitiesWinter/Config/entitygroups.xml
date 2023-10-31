@@ -34,7 +34,6 @@
     <entitygroup name="FlyingNightmares">
       fantasyNightmare03Flying
       animalSnowTornado_X
-	  animalBloodFlySwarm_X
     </entitygroup>
   </append>
   
