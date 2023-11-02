@@ -1,3 +1,0 @@
-﻿<config>
-	<set xpath="/entity_classes/entity_class[@name='npcNurseEmptyHand']/property[@name='NPCID']/@value">DialogTesting</set>
-</config>
