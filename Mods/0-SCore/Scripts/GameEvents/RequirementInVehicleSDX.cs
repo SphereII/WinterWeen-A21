@@ -9,6 +9,7 @@ namespace SCore.Scripts.GameEvents
 
         protected override void OnInit()
         {
+            
         }
 
         public override bool CanPerform(Entity target)

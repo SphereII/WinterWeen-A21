@@ -25,15 +25,17 @@ namespace Harmony.SoundFeatures
 
             // Dictionary search for substring
             if (!SoundDataNodeClassSDX.SoundDataSDXInfo.ContainsKey(soundGroupName)) return;
-            AdvLogging.DisplayLog(AdvFeatureClass, "Found Sound Node. Checking for buffs");
+            AdvLogging.DisplayLog(AdvFeatureClass, $"Found Sound Node. Checking for buffs: {soundGroupName}");
 
             // use xmlData to grab the sound node information, which can contain how far away the sound can be heard.
             if (!Manager.audioData.TryGetValue(soundGroupName, out var xmlData))
+            {
+                AdvLogging.DisplayLog(AdvFeatureClass, $"Could not get xmlData: {soundGroupName}");
                 return;
+            }
 
             var radius = Utils.Fastfloor(xmlData.distantFadeEnd);
             var data = SoundDataNodeClassSDX.SoundDataSDXInfo[soundGroupName];
-
             if (data.Buff != null)
             {
                 AdvLogging.DisplayLog(AdvFeatureClass, ": Found Buff for Sound Node: " + data.Buff);

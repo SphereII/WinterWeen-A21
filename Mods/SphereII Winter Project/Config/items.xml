@@ -759,7 +759,7 @@
     </item>
     <item name="drinkJarYuccaCocktailFrozen" >
       <property name="Extends" value="foodFrozenBase" />
-      <property name="CustomIcon" value="drinkJarYuccaCocktail" />
+      <property name="CustomIcon" value="drinkJarYuccaJuice" />
     </item>
     <item name="drinkYuccaJuiceSmoothieFrozen" >
       <property name="Extends" value="foodFrozenBase" />

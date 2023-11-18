@@ -12,8 +12,7 @@
 	<set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='CaveConfiguration']/property[@name='CaveEnabled']/@value">true</set>
 	<set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='CaveConfiguration']/property[@name='CaveType']/@value">All</set>
 	<set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='CaveConfiguration']/property[@name='CavesClusterSize']/@value">50</set>
-	
-	
+
 	<append xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='FoodSpoilage']">
 		<property name="FullStackSpoil" value="true"/>
 	</append>
