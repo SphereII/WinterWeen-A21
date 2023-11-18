@@ -723,7 +723,7 @@
     </item>
     <item name="foodCropPumpkinFrozen" >
       <property name="Extends" value="foodFrozenBase" />
-      <property name="CustomIcon" value="foodCropPumpkin" />
+      <property name="CustomIcon" value="plantedPumpkin3Harvest" />
     </item>
     <item name="drinkCanRiverWaterFrozen" >
       <property name="Extends" value="foodFrozenBase" />
