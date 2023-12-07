@@ -152,7 +152,16 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
             if (value.Equals(entityName)) return;
 
             entityName = value;
-            _strMyName = value;
+
+            // Don't set the internal name if it's the name of the entity class, since the
+            // EntityFactory calls the setter with the class name when it creates the entity.
+            // But set the internal name otherwise, because the setter is also called when the
+            // entity is re-created after being picked up and placed again.
+            if (value?.Equals(EntityClass.list[entityClass].entityClassName) != true)
+            {
+                _strMyName = value;
+            }
+
             bPlayerStatsChanged |= !isEntityRemote;
         }
     }
@@ -691,10 +700,17 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
         if (lootContainer == null) return;
         var num2 = (int)_br.ReadByte();
         var array = new ItemStack[num2];
+        var containerSize = lootContainer.GetContainerSize();
+        var totalItems = containerSize.x * containerSize.y;
         for (var j = 0; j < num2; j++)
         {
             var itemStack = new ItemStack();
             array[j] = itemStack.Read(_br);
+            if (j > totalItems)
+            {
+                Log.Out("Loot container is out of range.");
+                break;
+            }
             lootContainer.UpdateSlot(j, array[j]);
         }
         lootContainer.bPlayerStorage = true;
@@ -1089,7 +1105,7 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
         //CheckNoise();
         if (isHirable)
             LeaderUpdate();
-
+        
         CheckStuck();
         
         // SetupAutoPathingBlocks();
@@ -1986,10 +2002,12 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
     public bool FindWeapon(string weapon)
     {
         var currentWeapon = ItemClass.GetItem(weapon);
+        if (currentWeapon == null) return false;
         if (!currentWeapon.ItemClass.Properties.Contains("CompatibleWeapon")) return false;
         var playerWeapon = currentWeapon.ItemClass.Properties.GetStringValue("CompatibleWeapon");
         if (string.IsNullOrEmpty(playerWeapon)) return false;
         var playerWeaponItem = ItemClass.GetItem(playerWeapon);
+        if (playerWeaponItem == null) return false;
         if (lootContainer.HasItem(playerWeaponItem)) return true;
         
         // If we don't have it in our loot container, check to see if we had it when we first spawned in.
@@ -2025,7 +2043,11 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
         }
     }
 
-
+    public void RefreshWeapon()
+    {
+        var item = ItemClass.GetItem(_currentWeapon);
+        UpdateWeapon(item);
+    }
     public void UpdateWeapon(string itemName = "")
     {
         if (string.IsNullOrEmpty(itemName))
@@ -2033,7 +2055,8 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
 
         var item = ItemClass.GetItem(itemName);
         UpdateWeapon(item);
-        EntityUtilities.UpdateHandItem(entityId);
+        EntityUtilities.UpdateHandItem(entityId,itemName);
+
     }
     // Allows the NPC to change their hand items, and update their animator.
     public void UpdateWeapon(ItemValue item)
@@ -2045,16 +2068,17 @@ public class EntityAliveSDX : EntityTrader, IEntityOrderReceiverSDX
         // Do we have this item?
         if (!FindWeapon(_currentWeapon))
         {
+            Debug.Log($"Item not found: {_currentWeapon}");
             if (string.IsNullOrEmpty(_defaultWeapon))
                 return;
 
             // Switch to default
             item = ItemClass.GetItem(_defaultWeapon);
         }
-        // if (item.GetItemId() == inventory.holdingItemItemValue.GetItemId())
-        // {
-        //     return;
-        // }
+        if (item.GetItemId() == inventory.holdingItemItemValue.GetItemId())
+        {
+            return;
+        }
 
         _currentWeapon = item.ItemClass.GetItemName();
         Buffs.SetCustomVar("CurrentWeaponID", item.GetItemId());

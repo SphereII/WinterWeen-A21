@@ -23,6 +23,83 @@ Direct Download to the 0-SCore.zip available on gitlab mirror:
 ### Change Logs
 
 [ Change Log ]
+Version:
+	[ Trader Protection ]
+		- Added a check to disable Trader Teleport when crossing the bounds of a trader.
+	
+	[ Portal ]
+		- Added the ability to define a buff to activate the portal.
+			<property name="ActivateBuff" value="myBuff" />
+		- If this buff is defined, the buff must be active in order to use the teleport.
+			- When denied, the Portal will chime a Denied sign, and show the localization entry for xuiPortalDenied.
+			- If the Localization entry for xuiPortalDenied is an empty string, it will not chime, or show a tool tip on denial.
+		- For Powered Portals, this check happens after checking if the portal is powered.
+
+	[ EntityAliveSDX ]
+		- Added a sanity check for loot container size.
+
+	[ Spook ]
+		- Fixed an issue where the sky was not as dark as it was supposed to be.
+
+Version: 21.2.11.1647
+	[ Fire Manager ]
+		- Fixed an issue where fires could not be extinguished on servers.
+		- Fixed a potential issue with an excessive amount of net packages being sent.
+
+	[ NPC Weapon Swap ]
+		- Changed NetPackage for weapon swap
+		- Added new helper method in EntityAliveSDX to better handle it
+		- Added a preventative null check on FindWeapon()
+
+
+Version: 21.2.1.1646
+	[ Rebuild ]
+		- Re-built and re-linked against Alpha 21.2
+
+	[ Remote Crafting Utils ]
+		- Fixed a change in the TryStackItem in the loot container.
+
+Version: 21.1.111.950
+	[ Merging changes ]
+		The EntityName property setter is called in (at least) two cases for NPCs:
+
+			During EntityFactory.Create, when it is set to the entity class name
+			When the NPC entity is being re-created after being picked up and put down
+		
+		We should not set the private _strMyName in the first case, since that erases the random name chosen from the "Names" property in the entity class XML. 
+		But in the second case, the name that is being set was previously taken from the EntityName property, so should be the correct value chosen from "Names".
+
+Version: 21.1.110.1032
+	[ Buff / Quest From Sounds ]
+		- Fixed an issue where buffs / quests were not being properly read by sounds.
+
+	[ Hire CVars ]
+		- Added new cvar "CurrentHireCount" to keep track of the number of hired NPCs.
+		- This is cvar is updated when:
+			- An Entity is hired, the CheckStaleHires is ran, updating the cvar.
+			- When the MinEvent for ClearStaleHires fires:
+				<triggered_effect trigger = "onSelfBuffUpdate" action="ClearStaleHires, SCore"  />
+
+		- This cvar can be used in the dialog system as well, for requirements
+	        <requirement type="HasCVarSDX, SCore" requirementtype="Hide" id="CurrentHireCount" operator="LTE" value="3" /> 
+
+	[ Quest Objective Block Destroy ]
+		- Fixed an issue because I was calling the wrong net package, and changes were not being distributed properly to the party.
+
+Version: 21.1.97.930
+	[ Farming ]
+		- Fixed an issue where valves did not work properly on dedi
+
+	[ Dialog ]
+		- Added support to trigger an action from a statement, rather than only a response.
+
+	[ RequirementInVehicleSDX ]
+		- Added a fix for the name space. 
+			- This is waiting for a fix in vanilla before it functions.
+
+	[ Inert ]
+		- Fixed an issue where Inert was making invisible entities when paused.
+
 Version: 21.1.89.1227
 	[ Game Events ]
 		- Fixed typo in Vehicle.

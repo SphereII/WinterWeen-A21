@@ -1,6 +1,8 @@
-Key,English
-Cursed,"Cursed By A Screamer"
-CursedDesc,"Cursed By A Screamer; Her shriek rattled your brain. What's real, what's not...."
+Key,english
+buffCursed,"Cursed by Gaia"
+buffCursedName,"Cursed by Gaia"
+buffCursedDesc,"Cursed by Gaia, the Goddess of Earth. Punished for taking innocent life. What's real, what's not...."
+buffCursedTooltip,"Cursed by Gaia, the Goddess of Earth. Punished for taking innocent life. What's real, what's not...."
 buffSamaraAOE,"Samara Morgan's Thoughts"
 buffSamaraAttack,"Samara Morgan's Thoughts"
 buffSamaraAttackTooltip,"Don't you get it? She never sleeps..."
@@ -13,9 +15,13 @@ buffFrostbite2Desc,"Your skin turns an unnatural white from the frost bite"
 buffFrostbiteTooltip,"You are suffering frost bite."
 buffFrostbite2Tooltip,"You are suffering from severe frostbite. Seek shelter!"
 
-buffBadKarma,"Maw's Revenge"
-buffBadKarmaDesc,"Maw's Revenge. You've killed once of its beloved creatures."
-buffBadKarmaTooltip,"Maw's Revenge. You've killed once of its beloved creatures."
+buffShakesName,"Shakes"
+buffShakesDesc,"Shaky Hands"
+buffShakesTooltip,"Your hands are shaking from the weight of the curse."
+
+buffBadKarmaName,"Gaia's Revenge"
+buffBadKarmaDesc,"Gaia's Revenge. You've killed one of her beloved creatures."
+buffBadKarmaTooltip,"Gaia's Revenge. You've killed one of her beloved creatures."
 
 quest_Samara_Diary01,"Find Samara's Diary"
 quest_Samara_Diary01_description,"Richard Morgan tried to make this diary disappear, but we know it exists. "

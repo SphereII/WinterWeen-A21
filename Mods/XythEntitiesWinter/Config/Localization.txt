@@ -87,3 +87,5 @@ DeadSnake,Dead Snake
 DeadHead,Dead Head
 nightmareBlood,"Nightmare Blood"
 nightmareBloodDesc,"The impure blood of a nightmare gurgles and bubbles."
+buffFrostbite,"Frost Bite!"
+buffFrostbite2,"Severe Frost Bite"

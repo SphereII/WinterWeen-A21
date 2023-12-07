@@ -305,7 +305,7 @@
       </effect_group>
     </buff>
 
-   <buff name="buffShakes" name_key="Shakes" icon="ui_game_symbol_destruction2" remove_on_death="false" hidden="false">
+   <buff name="buffShakes" name_key="buffShakesName" description_key="buffShakesDesc" tooltip_key="buffShakesTooltip" icon="ui_game_symbol_destruction2" remove_on_death="false" hidden="false">
       <duration value="0"/>
       <stack_type value="replace"/>
 	  <effect_group>
@@ -317,7 +317,7 @@
 
 
     <!-- buff for activating the Activeblocks if you want to configure that to trigger when the player has a buff and is near the Pic.  -->
-    <buff name="buffCursed" name_key="Cursed" icon="ui_game_symbol_destruction2" remove_on_death="false" hidden="false">
+    <buff name="buffCursed" name_key="buffCursedName" description_key="buffCursedDesc" tooltip_key="buffCursedTooltip" icon="ui_game_symbol_destruction2" remove_on_death="false" hidden="false">
       <duration value="0"/>
       <stack_type value="replace"/>
 	   <effect_group name="twitchy">
@@ -332,7 +332,7 @@
       <stack_type value="replace"/>
     </buff>
 
-    <buff name="buffBadKarma" hidden="false">
+    <buff name="buffBadKarma" name_key="buffBadKarmaName" description_key="buffBadKarmaDesc" tooltip_key="buffBadKarmaTooltip" hidden="false">
       <duration value="1200"/>
       <stack_type value="replace"/>
       <effect_group name="Cursed from Screamers">

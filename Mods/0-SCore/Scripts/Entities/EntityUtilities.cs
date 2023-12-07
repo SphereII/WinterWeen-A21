@@ -725,6 +725,7 @@ public static class EntityUtilities
                 if (myEntity.IsSleeping)
                     myEntity.ConditionalTriggerSleeperWakeUp();
 
+                CheckForDanglingHires(_player.entityId);
                 return true;
             }
 
@@ -885,29 +886,29 @@ public static class EntityUtilities
         var removeList = new List<string>();
         foreach (var cvar in leader.Buffs.CVars)
         {
-            if (cvar.Key.StartsWith("hired_"))
+            if (!cvar.Key.StartsWith("hired_")) continue;
+            var entity = GameManager.Instance.World.GetEntity((int) cvar.Value) as EntityAlive;
+            if (entity == null)
             {
-                totalHired++;
-                var entity = GameManager.Instance.World.GetEntity((int) cvar.Value) as EntityAlive;
-                if (entity == null)
-                {
-                    totalCleared++;
-                    removeList.Add(cvar.Key);
-                    continue;
-                }
-
-                var leader2 = EntityUtilities.GetLeaderOrOwner(entity.entityId);
-                if (leader2 && leader2.entityId == leaderID)
-                {
-                    // Still hired.
-                    continue;
-                }
-
                 totalCleared++;
                 removeList.Add(cvar.Key);
+                continue;
             }
+
+            var leader2 = EntityUtilities.GetLeaderOrOwner(entity.entityId);
+            if (leader2 && leader2.entityId == leaderID)
+            {
+                totalHired++;
+                // Still hired.
+                continue;
+            }
+
+            totalCleared++;
+            removeList.Add(cvar.Key);
         }
 
+        leader.Buffs.AddCustomVar("CurrentHireCount", totalHired);
+        
         foreach (var cvar in removeList)
             leader.Buffs.CVars.Remove(cvar);
 
@@ -1943,32 +1944,23 @@ public static class EntityUtilities
         GameManager.Instance.World.RemoveEntity(entity.entityId, EnumRemoveEntityReason.Despawned);
     }
 
-    public static void UpdateHandItem(int entityId)
+    public static void UpdateHandItem(int entityId, string item)
     {
         var entity = GameManager.Instance.World.GetEntity(entityId) as EntityAliveSDX;
-        if (entity == null) return;
+        if (entity == null)
+        {
+            return;
+        }
+
         if (SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
         {
-            SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageHoldingItem>().Setup(entity), false, -1, -1, -1, -1);
+            SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(NetPackageManager.GetPackage<NetPackageWeaponSwap>().Setup(entity, item), false, -1, -1, -1, -1);
         }
         else
         {
-            SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageHoldingItem>().Setup(entity), false);
+            SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(NetPackageManager.GetPackage<NetPackageWeaponSwap>().Setup(entity, item), false);
         }
-        
-        // if (!SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer)
-        // {
-        //     Debug.Log($"Client Side: {entityId} Item: {itemId}");
-        //     SingletonMonoBehaviour<ConnectionManager>.Instance.SendToServer(
-        //         NetPackageManager.GetPackage<NetPackageWeaponSwap>().Setup(entityId, itemId), false);
-        //     return;
-        // }
-
-        // var entity = GameManager.Instance.World.GetEntity(entityId);
-        // if (entity == null) return;
-        //
-        // Debug.Log($"Server Side: {entityId} Item: {itemId}");
-        // SingletonMonoBehaviour<ConnectionManager>.Instance.SendPackage(
-        //     NetPackageManager.GetPackage<NetPackageWeaponSwap>().Setup(entityId, itemId), false, -1, -1, -1, -1);
+       
+      
     }
 }

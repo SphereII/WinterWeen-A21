@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SphereII Skip Tutorial Ques
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SphereII Winter Project", "SphereII Winter Project\SphereII Winter Project.csproj", "{C2DC2D3C-23A3-4B5F-ACEE-39C77D5D10A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterBiomeEffects", "BetterBiomeEffects\BetterBiomeEffects.csproj", "{C6AFD252-2407-4925-9398-6FE0B33F0D58}"
+EndProject
 
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,5 +45,9 @@ Global
 		{1A4334AE-8A07-45B1-B9C4-C0A125E56A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A4334AE-8A07-45B1-B9C4-C0A125E56A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A4334AE-8A07-45B1-B9C4-C0A125E56A61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6AFD252-2407-4925-9398-6FE0B33F0D58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6AFD252-2407-4925-9398-6FE0B33F0D58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6AFD252-2407-4925-9398-6FE0B33F0D58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6AFD252-2407-4925-9398-6FE0B33F0D58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

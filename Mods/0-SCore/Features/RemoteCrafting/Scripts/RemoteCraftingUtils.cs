@@ -297,7 +297,7 @@ namespace SCore.Features.RemoteCrafting.Scripts
                 //if (lootTileEntity.TryStackItem(0, itemStack)) return true;
                 var result = lootTileEntity.TryStackItem(0, itemStack);
                 if (result.allMoved) return true;
-                
+
                 var matchingItem = false;
                 // Loop through the items and see if we have any matching items.
                 foreach (var item in lootTileEntity.GetItems())

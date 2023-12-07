@@ -11,7 +11,7 @@
 	<!---set xpath="//@topsoil_block">terrSnow</set-->
   <append xpath="/worldgeneration/biomes/biome//layers/layer[@depth][1]">
     <resource blockname="terrIce" prob="0.6500" rwgGenerationType="all" cluster="0"/>
-    <resource blockname="terrSnowTrap" prob="0.6500" rwgGenerationType="all" cluster="0"/>
+    <resource blockname="terrSnowTrap" prob="0.300" rwgGenerationType="all" cluster="0"/>
   </append>
 
   <!-- Change the particle effect for the biomes, so we don't get a sandstorm 

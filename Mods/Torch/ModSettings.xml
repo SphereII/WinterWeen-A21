@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModSettings>
+	<Global>
+		<Tab name="General">
+			<Category name="General" displayKey="torchSettingGeneral" tooltipKey="torchSettingGeneralTooltip">
+				<Switch name="Enabled" displayKey="torchSettingEnabled" tooltipKey="torchSettingEnabledTooltip" value="Enabled" defaultValue="Enabled" leftValue="Disabled" rightValue="Enabled" />
+				<Switch name="CullingEnabled" displayKey="torchSettingCulling" tooltipKey="torchSettingCullingTooltip" value="Enabled" defaultValue="Enabled" leftValue="Disabled" rightValue="Enabled" />
+				<Switch name="ShadowMapCachingEnabled" displayKey="torchSettingShadowMapCaching" tooltipKey="torchSettingShadowMapCachingTooltip" value="Enabled" defaultValue="Enabled" leftValue="Disabled" rightValue="Enabled" />
+			</Category>
+			<Category name="Shadows" displayKey="torchSettingShadows" tooltipKey="torchSettingShadowsTooltip">
+				<Selector name="ShadowMapResolution" displayKey="torchSettingShadowMapResolution" tooltipKey="torchSettingShadowMapResolutionTooltip" value="High" defaultValue="High">
+					<Property type="arrayValues" allowedValues="Low,Med,High" />
+				</Selector>
+				<Selector name="MaxPixelLightShadowMaps" displayKey="torchSettingMaxPixelLightShadowMaps" tooltipKey="torchSettingMaxPixelLightShadowMapsTooltip" value="16" defaultValue="16">
+					<Property type="incrementalValuesInt" increment="16" minValue="16" maxValue="64"/>
+				</Selector>
+			</Category>
+		</Tab>
+	</Global>
+</ModSettings>

@@ -68,22 +68,18 @@
       <property name="MultiBlockDim" value="1,14,1"/>
     </append>
     -->
-	<set xpath="/blocks/block[@name='treeMaster']/property[@name='Model']/@value">
-        #@modfolder:Resources/WinterTrees.unity3d?Tree3_X
-    </set>
+	
+	<set xpath="/blocks/block[@name='treeMaster']/property[@name='Model']/@value">#@modfolder:Resources/WinterTrees.unity3d?Tree3_X</set>
 	<append xpath="/blocks/block[starts-with( @name, 'treeMaster')]">
 		<property name="MultiBlockDim" value="1,12,1"/>
 	</append>
-	<set xpath="/blocks/block[starts-with( @name, 'treePlanted')]/property[@name='Model']/@value">
-        #@modfolder:Resources/WinterTrees.unity3d?Birch1_X
-    </set>
+	
+	<set xpath="/blocks/block[starts-with( @name, 'treePlanted')]/property[@name='Model']/@value">#@modfolder:Resources/WinterTrees.unity3d?Birch1_X</set>
 	<remove xpath="/blocks/block[starts-with( @name, 'treePlanted')]/property[@name='MultiBlockDim']"/>
 	<append xpath="/blocks/block[starts-with( @name, 'treePlanted')]">
 		<property name="MultiBlockDim" value="1,18,1"/>
 	</append>
-	<set xpath="/blocks/block[starts-with( @name, 'treeMountainPine')]/property[@name='Model']/@value">
-        #@modfolder:Resources/WinterTrees.unity3d?Birch1_X
-    </set>
+	<set xpath="/blocks/block[starts-with( @name, 'treeMountainPine')]/property[@name='Model']/@value">#@modfolder:Resources/WinterTrees.unity3d?Birch1_X</set>
 	<remove xpath="/blocks/block[starts-with( @name, 'treeMountainPine')]/property[@name='MultiBlockDim']"/>
 	<append xpath="/blocks/block[starts-with( @name, 'treeMountainPine')]">
 		<property name="MultiBlockDim" value="1,18,1"/>
@@ -130,6 +126,14 @@
 	<append xpath="/blocks/block[starts-with( @name, 'treeFirLrg01')]">
 		<property name="MultiBlockDim" value="1,18,1"/>
 	</append>
+	
+	<!-- Fixing the seeds which preview the full sized tree -->
+	<set xpath="/blocks/block[@name='treePlantedOak1m']/property[@name='Model']/@value">@:Entities/Trees/OakSeed01Prefab.prefab</set>
+	<remove xpath="/blocks/block[@name='treePlantedOak1m']/property[@name='MultiBlockDim']"/>
+
+	<set xpath="/blocks/block[@name='treePlantedMountainPine1m']/property[@name='Model']/@value">@:Entities/Trees/MountainPineSeed01Prefab.prefab</set>
+	<remove xpath="/blocks/block[@name='treePlantedMountainPine1m']/property[@name='MultiBlockDim']"/>
+
 	<remove xpath="/blocks/block[starts-with(@name, 'treeCactus')]"/>
 	<insertBefore xpath="/blocks/block[@name='treeSnowyGrassDiagonal']">
 		<block name="treeCactus01">
@@ -392,7 +396,7 @@
 			<property name="SortOrder2" value="0050"/>
 			<property name="DisplayType" value="blockTerrainFertile"/>
 			<property name="Class" value="TrapDoor"/>
-			<property name="TriggerDelay" value="0.1"/>
+			<property name="TriggerDelay" value="0.3"/>
 			<property name="TriggerSound" value="bullethitsnow"/>
 			<property name="Path" value="solid"/>
 			<drop event="Fall" count="0"/>
@@ -429,5 +433,16 @@
 		<property class="AttachScriptToTransform">
 			<property name="temp" value="AddSnowToGlass"/>
 		</property>
+	</append>
+	
+	<!-- preserve bonus for freezes ? -->
+	<append xpath="//block[name='cntFreezerMaster']" >
+		<property name="PreserveBonus" value="6" />
+	</append>
+	<append xpath="//block[name='cntRetroFridgeVer1Closed']" >
+		<property name="PreserveBonus" value="4" />
+	</append>
+	<append xpath="//block[name='cntCoolerRandomLootHelper']" >
+		<property name="PreserveBonus" value="2" />
 	</append>
 </configs>
